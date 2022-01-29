@@ -1,4 +1,4 @@
-package com.vdobrikov.booking.messaging;
+package com.vdobrikov.booking.event;
 
 import com.vdobrikov.model.Booking;
 import lombok.extern.slf4j.Slf4j;
