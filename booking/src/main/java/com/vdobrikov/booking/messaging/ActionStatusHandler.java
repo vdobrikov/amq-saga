@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class ActionStatusHandler {
     private final BookingService bookingService;
 
-    @JmsListener(destination = "${topic_status}")
+    @JmsListener(destination = "${jms.topic.status}")
     public void onActionStatus(ActionStatus actionStatus) {
         // Here distributed transaction completes
         switch (actionStatus.status()) {

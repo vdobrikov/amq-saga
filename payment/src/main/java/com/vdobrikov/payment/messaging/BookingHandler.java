@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class BookingHandler {
     private final PaymentService paymentService;
 
-    @JmsListener(destination = "${topic_booking}")
+    @JmsListener(destination = "${jms.topic.booking}")
     public void onBooking(Booking booking) {
         log.info("Received booking={}", booking);
         paymentService.makePaymentFor(booking);

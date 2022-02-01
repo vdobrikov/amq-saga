@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 @Service
 public class PaymentService {
-    private static final int MAX_PRICE = 100;
+    public static final int MAX_PRICE = 100;
     private final ApplicationEventPublisher eventPublisher;
 
     public void makePaymentFor(Booking booking) {

@@ -28,4 +28,8 @@ public class BookingRepository {
     public Optional<BookingEntity> delete(UUID id) {
         return Optional.ofNullable(idToBooking.remove(id));
     }
+
+    public void deleteAll() {
+        idToBooking.clear();
+    }
 }
