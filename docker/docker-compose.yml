@@ -3,7 +3,6 @@ version: '3.6'
 services:
   active-mq:
     container_name: active-mq
-#    image: symptoma/activemq:5.16.2
     image: fogsyio/activemq:5.15.9
     ports:
       - '61616:61616'
