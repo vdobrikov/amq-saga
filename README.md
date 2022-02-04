@@ -2,7 +2,7 @@
 
 Example of SAGA pattern for microservice communication:
 1. Booking
-   1. `booking`: Accept booking request (`http post :8080/booking name=test price=3`)
+   1. `booking`: Accept booking request (`http post http://localhost:8080/booking name=test price=3`)
    2. `booking`: Add booking into DB with PENDING status (local map for simplicity)
    3. `booking`: Send booking event via message queue (ActiveMQ)  
 2. Payment
@@ -10,8 +10,8 @@ Example of SAGA pattern for microservice communication:
    2. `payment`: Make payment
    3. `payment`: Send action status message via message queue
 3. Complete booking
-   1. `booking`: In case of failed payment delete booking from DB
-   2. `booking`: In case of succeeded payment mark booking as completed
+   1. `booking`: In case of failed payment (price > 100) delete booking from DB
+   2. `booking`: In case of succeeded payment (price < 100) mark booking as completed
 
 ## Usage
 
